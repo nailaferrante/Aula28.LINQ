@@ -19,7 +19,7 @@ namespace lambda2
             foreach(string t in cid)
                 Console.WriteLine(t.ToUpper());;*/
 
-            //Exemplo 2
+            //Exemplo 2 - Linq
             /*List<Alunos> aluno = new List<Alunos>(){
                 new Alunos{Id=20, Nome="Fernanda",Email="fernanda@terra.com.br",Idade=20},
                 new Alunos{Id=15, Nome="Tadeu",Email="tadeu@terra.com.br",Idade=55},
@@ -31,7 +31,28 @@ namespace lambda2
             foreach(Alunos w in al)
                 Console.WriteLine(w.Nome+","+w.Email+","+w.Idade);*/
 
-            
+            //Exemplo 3 - Linq com Lambda
+            /*List<Alunos> aluno = new List<Alunos>(){
+                new Alunos{Id=20, Nome="Fernanda",Email="fernanda@terra.com.br",Idade=20},
+                new Alunos{Id=15, Nome="Tadeu",Email="tadeu@terra.com.br",Idade=55},
+                new Alunos{Id=56, Nome="Pablo",Email="pablo@terra.com.br",Idade=18},
+                new Alunos{Id=68, Nome="Martha",Email="marthaa@terra.com.br",Idade=28}
+            };
+            var al = aluno.Where(z=> z.Idade>20 && z.Idade< 50);
+            foreach(var p in al)
+                Console.WriteLine(p.Nome);*/
+
+            //Exemplo 4 
+            /*List<Alunos> aluno = new List<Alunos>(){
+                new Alunos{Id=20, Nome="Fernanda",Email="fernanda@terra.com.br",Idade=20},
+                new Alunos{Id=15, Nome="Tadeu",Email="tadeu@terra.com.br",Idade=55},
+                new Alunos{Id=56, Nome="Pablo",Email="pablo@terra.com.br",Idade=18},
+                new Alunos{Id=68, Nome="Martha",Email="marthaa@terra.com.br",Idade=28}
+            };
+            var al = from b in aluno where b.Email.Contains("terra") orderby b.Id descending select b ;
+            foreach(var p in al)
+                Console.WriteLine(p.Nome);*/
+
         }
     }
 }
